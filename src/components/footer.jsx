@@ -66,7 +66,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-r from-gray-50 to-gray-100 py-8 px-4 md:px-8 lg:px-12 text-gray-700 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
+      <div className="px-10 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
         {/* Logo and Socials */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left md:mt-3">
           <div className="flex items-center justify-center md:justify-start mb-4">

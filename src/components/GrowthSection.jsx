@@ -5,14 +5,14 @@ import Growth from '../assets/growth.png'
 const GrowthSection = () => {
   return (
     <section className="bg-gray-50 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
         
         {/* Left Side - Illustration */}
         <div className="flex justify-center">
           <img
             src={Growth}
             alt="Marketing Tech Solutions"
-            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain"
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover"
           />
         </div>
 

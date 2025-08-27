@@ -29,7 +29,7 @@ const Brands = () => {
   }, []);
 
   return (
-    <div className="py-8 sm:py-12 bg-gray-50 px-4 sm:px-6 lg:px-20">
+    <div className="py-8 sm:py-12 bg-gray-50 px-4 sm:px-6 lg:px-10">
       <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">
         Our <span className="text-orange-500">Products</span>
       </h2>

@@ -4,9 +4,9 @@ import Footer from './components/footer';
 import { Suspense, lazy } from 'react';
 import Loader from './components/Loader';
 const Main = lazy(() => import('./home/mainPage'));
-const About = lazy(() => import('./home/aboutus'));
-const Contact = lazy(() => import('./home/contactUs'));
-const OurService = lazy(() => import('./home/ourServices'));
+const About = lazy(() => import('./home/about'));
+const Contact = lazy(() => import('./home/contactpage'));
+const Service =lazy(()=> import('./home/Services'))
 const PrivacyPolicy = lazy(() => import('./home/privacyPolicy'));
 const TermsAndCondition = lazy(() => import('./home/termsAndCondition'));
 
@@ -23,7 +23,7 @@ const App = () => {
              <Route path="/about" element={<About />} />
               {/* Others */}
               <Route path="/contact" element={<Contact />} />
-              <Route path="/services" element={<OurService />} />
+                 <Route path="/services" element={<Service />} />
               <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
               <Route path="/termsAndCondition" element={<TermsAndCondition />} />
             </Routes>
