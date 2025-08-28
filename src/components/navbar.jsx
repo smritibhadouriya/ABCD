@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({
   logoText = "MARCADEO",
@@ -81,13 +81,13 @@ const Navbar = ({
               >
                 {link.subMenu ? (
                   <span
-                    className={`${
-                      isScrolledUp
-                        ? "text-orange-600 text-lg font-bold hover:text-orange-600"
-                        : "text-orange-500 font-bold text-lg hover:text-orange-600"
-                    } cursor-pointer relative inline-flex items-center gap-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:w-0 hover:after:w-full after:transition-all after:duration-300 after:ease-in-out`}
-                    onMouseEnter={() => handleMouseEnter(index)}
-                  >
+    className={`${
+      isScrolledUp
+        ? "text-orange-600 text-lg font-bold hover:text-orange-600"
+        : "text-orange-500 font-bold text-lg hover:text-orange-600"
+    } cursor-pointer relative inline-flex items-center gap-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:w-0 hover:after:w-full after:transition-all after:duration-300 after:ease-in-out`}
+    onMouseEnter={() => handleMouseEnter(index)}
+  >
                     {link.name}
                     <motion.svg
                       className="w-4 h-4 ml-1"
@@ -108,16 +108,16 @@ const Navbar = ({
                     </motion.svg>
                   </span>
                 ) : (
-                  <a
-                    href={link.to}
-                    className={`${
-                      isScrolledUp
-                        ? "text-orange-600 font-bold text-lg hover:text-orange-600"
-                        : "text-orange-500 font-bold text-lg hover:text-orange-600"
-                    } relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:w-0 hover:after:w-full after:transition-all after:duration-300 after:ease-in-out`}
-                  >
+                <Link
+    to={link.to} // Use `to` instead of `href`
+    className={`${
+      isScrolledUp
+        ? "text-orange-600 font-bold text-lg hover:text-orange-600"
+        : "text-orange-500 font-bold text-lg hover:text-orange-600"
+    } relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:w-0 hover:after:w-full after:transition-all after:duration-300 after:ease-in-out`}
+  >
                     {link.name}
-                  </a>
+                </Link>
                 )}
 
                 {/* Enhanced Dropdown Menu */}
@@ -241,31 +241,31 @@ const Navbar = ({
         <div className="mt-12 p-4">
           {navLinks.map((link, index) => (
             <div key={index} className="mb-4">
-              {link.subMenu ? (
-                <div>
-                  <span className="block text-gray-800 font-medium py-2">
-                    {link.name}
-                  </span>
-                  <div className="ml-4">
-                    {link.subMenu.map((subItem, i) => (
-                      <a
-                        key={i}
-                        href={subItem.to}
-                        className="block text-gray-600 hover:text-orange-600 py-2 text-sm"
-                      >
-                        {subItem.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <a
-                  href={link.to}
-                  className="block text-gray-800 hover:text-orange-600 py-2 font-medium"
-                >
-                  {link.name}
-                </a>
-              )}
+           {link.subMenu ? (
+  <div>
+    <span className="block text-gray-800 font-medium py-2">
+      {link.name}
+    </span>
+    <div className="ml-4">
+      {link.subMenu.map((subItem, i) => (
+        <a
+          key={i}
+          href={subItem.to} // Keep <a> for external links like Trackopia
+          className="block text-gray-600 hover:text-orange-600 py-2 text-sm"
+        >
+          {subItem.name}
+        </a>
+      ))}
+    </div>
+  </div>
+) : (
+  <Link
+    to={link.to} // Use Link for internal routes
+    className="block text-gray-800 hover:text-orange-600 py-2 font-medium"
+  >
+    {link.name}
+  </Link>
+)}
             </div>
           ))}
           <button
