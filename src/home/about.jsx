@@ -14,7 +14,6 @@ import shemaroo from '../assets/clients/shemaroo.png';
 import woman from '../assets/clients/woman.png';
 import woo from '../assets/clients/woo.png';
 import zigly from '../assets/clients/zigly.png';
-
 import vision from '../assets/vision.jpg'
 import mission from '../assets/mission.jpg'
 import { useNavigate } from 'react-router-dom';
@@ -98,7 +97,7 @@ const About = () => {
 
           {/* Stats Section */}
           <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 bg-slate-50">
-            <div className="max-w-6xl mx-auto text-center">
+            <div className="max-w-7xl mx-auto text-center">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -153,8 +152,8 @@ const About = () => {
           </section>
 
           {/* Vision Section */}
-          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 bg-slate-50">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-12">
+          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-23 bg-slate-50">
+            <div className="max-w-7xl flex flex-col md:flex-row items-center gap-8 sm:gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -192,8 +191,8 @@ const About = () => {
           </section>
 
           {/* Mission Section */}
-          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 bg-slate-50">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row-reverse items-center gap-8 sm:gap-12">
+          <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 lg:px-23 bg-slate-50">
+            <div className="max-w-7xl  flex flex-col md:flex-row-reverse items-center gap-8 sm:gap-12">
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -234,9 +233,9 @@ const About = () => {
           </section>
 
           {/* Clients Section */}
-          <section className="py-12 sm:py-16 md:py-20 bg-slate-50">
+          <section className="py-12 sm:py-16 md:py-20 lg:px-30 bg-slate-50">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center text-gray-900 mb-8 sm:mb-12">Our <span className="text-orange-500">Clients</span></h2>
-            <div className="overflow-hidden relative max-w-6xl mx-auto">
+            <div className="overflow-hidden relative max-w-7xl">
               <motion.div
                 className="flex"
                 animate={{
@@ -245,18 +244,18 @@ const About = () => {
                     x: {
                       repeat: Infinity,
                       repeatType: 'loop',
-                      duration: 15,
+                      duration: 100,
                       ease: 'linear',
                     },
                   },
                 }}
-                style={{ width: '200%' }}
+                style={{ width: '250%' }}
               >
                 {[...clients, ...clients].map((client, index) => (
                   <div
                     key={`${client.id}-${index}`}
                     className="flex-shrink-0 mx-3 sm:mx-6 flex items-center justify-center"
-                    style={{ width: '120px', height: '60px', minWidth: '120px' }}
+                    style={{ width: '220px', height: '100px', minWidth: '250px' }}
                   >
                     <img
                       src={client.logo}

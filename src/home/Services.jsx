@@ -63,7 +63,7 @@ const OurServices = () => {
       </div>*/}
 
       {/* Services Grid */}
-      <main className="max-w-7xl mx-auto px-6 pt-10 pb-16">
+      <main className="px-6 pt-10 pb-16 lg:px-15">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />

@@ -3,8 +3,8 @@ import React from 'react';
 const IntroSection = () => {
   return (
     <div className="bg-slate-50 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-20">
-      <div className=" mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
+      <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-10 items-center">
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 animate-fade-in-up">
             <div className="space-y-4 sm:space-y-6">

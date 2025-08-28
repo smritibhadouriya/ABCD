@@ -28,18 +28,18 @@ const companyLogos = [
 
 const TrustedCompanies = () => {
   return (
-    <div className="py-8 sm:py-12 lg:py-16 bg-slate-50 px-4 sm:px-6 lg:px-8">
+    <div className="py-8 sm:py-12 lg:py-16 bg-slate-50 px-4 sm:px-6 lg:px-20 ">
       <p className="text-center text-gray-700 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
         Trusted by leading companies
       </p>
-      <div className="overflow-hidden w-full max-w-3xl sm:max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto">
-        <div className="flex animate-scroll gap-4 sm:gap-6">
+      <div className="overflow-hidden w-full max-w-3xl sm:max-w-4xl md:max-w-5xl lg:max-w-7xl">
+        <div className="flex animate-scroll gap-4 ">
           {[...companyLogos, ...companyLogos].map((logo, i) => (
             <img
               key={`${logo.id}-${i}`}
               src={logo.src}
               alt={logo.alt}
-              className="w-20 sm:w-24 md:w-35 h-10 sm:h-12 md:h-20 object-contain rounded-lg mx-2 sm:mx-3 flex-shrink-0"
+              className="w-20 sm:w-24 md:w-40 h-10 sm:h-12 md:h-20 object-cover rounded-lg mx-2 sm:mx-3 flex-shrink-0"
             />
           ))}
         </div>

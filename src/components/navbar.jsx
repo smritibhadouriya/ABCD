@@ -56,17 +56,17 @@ const Navbar = ({
     setHoveredMenu(null);
   };
 
-  return (
+ return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 w-full py-4 transition-all duration-300 ${
         isScrolledUp ? "bg-white shadow-md" : "bg-transparent"
-      } w-[calc(100%-48px)] mx-auto`}
+      } w-[calc(100%-48px)] mx-auto font-inter`} // Added font-inter
     >
       <div className="px-4 lg:px-10 mx-auto flex items-center justify-between cursor-pointer">
         <motion.div
           className={`${
             isScrolledUp ? "text-orange-600" : "text-orange-500"
-          } text-3xl sm:text-4xl font-bold`}
+          } text-3xl sm:text-4xl font-bold font-inter`} // Added font-inter
           onClick={() => navigate("/")}
         >
           {logoText}
@@ -81,13 +81,13 @@ const Navbar = ({
               >
                 {link.subMenu ? (
                   <span
-    className={`${
-      isScrolledUp
-        ? "text-orange-600 text-lg font-bold hover:text-orange-600"
-        : "text-orange-500 font-bold text-lg hover:text-orange-600"
-    } cursor-pointer relative inline-flex items-center gap-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:w-0 hover:after:w-full after:transition-all after:duration-300 after:ease-in-out`}
-    onMouseEnter={() => handleMouseEnter(index)}
-  >
+                    className={`${
+                      isScrolledUp
+                        ? "text-orange-600 text-lg font-bold hover:text-orange-600"
+                        : "text-orange-500 font-bold text-lg hover:text-orange-600"
+                    } cursor-pointer relative inline-flex items-center gap-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:w-0 hover:after:w-full after:transition-all after:duration-300 after:ease-in-out font-inter`} // Added font-inter
+                    onMouseEnter={() => handleMouseEnter(index)}
+                  >
                     {link.name}
                     <motion.svg
                       className="w-4 h-4 ml-1"
@@ -108,16 +108,16 @@ const Navbar = ({
                     </motion.svg>
                   </span>
                 ) : (
-                <Link
-    to={link.to} // Use `to` instead of `href`
-    className={`${
-      isScrolledUp
-        ? "text-orange-600 font-bold text-lg hover:text-orange-600"
-        : "text-orange-500 font-bold text-lg hover:text-orange-600"
-    } relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:w-0 hover:after:w-full after:transition-all after:duration-300 after:ease-in-out`}
-  >
+                  <Link
+                    to={link.to}
+                    className={`${
+                      isScrolledUp
+                        ? "text-orange-600 font-bold text-lg hover:text-orange-600"
+                        : "text-orange-500 font-bold text-lg hover:text-orange-600"
+                    } relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-current after:w-0 hover:after:w-full after:transition-all after:duration-300 after:ease-in-out font-inter`} // Added font-inter
+                  >
                     {link.name}
-                </Link>
+                  </Link>
                 )}
 
                 {/* Enhanced Dropdown Menu */}
@@ -137,7 +137,7 @@ const Navbar = ({
                         stiffness: 300,
                         damping: 30,
                       }}
-                      className="absolute top-full left-0 mt-3 w-56 rounded-xl shadow-2xl bg-white border border-gray-100 py-3 overflow-hidden"
+                      className="absolute top-full left-0 mt-3 w-56 rounded-xl shadow-2xl bg-white border border-gray-100 py-3 overflow-hidden font-inter" // Added font-inter
                       style={{
                         background:
                           "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,1) 100%)",
@@ -159,7 +159,7 @@ const Navbar = ({
                             duration: 0.3,
                             ease: "easeOut",
                           }}
-                          className="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-50 hover:text-orange-700 transition-all duration-300 group relative overflow-hidden"
+                          className="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-50 hover:text-orange-700 transition-all duration-300 group relative overflow-hidden font-inter" // Added font-inter
                         >
                           <div className="flex items-center justify-between">
                             <span className="relative z-10">
@@ -203,7 +203,7 @@ const Navbar = ({
                 isScrolledUp
                   ? "bg-orange-600 font-semibold text-white hover:bg-orange-700"
                   : "bg-orange-500 font-semibold text-white hover:bg-orange-600"
-              } px-4 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105`}
+              } px-4 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 font-inter`} // Added font-inter
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate("/contact")}
@@ -216,7 +216,7 @@ const Navbar = ({
               onClick={toggleMenu}
               className="hamburger focus:outline-none"
             >
-              <span className={`text-3xl ${isScrolledUp ? "text-orange-600" : "text-orange-500"}`}>
+              <span className={`text-3xl ${isScrolledUp ? "text-orange-600" : "text-orange-500"} font-inter`}> 
                 ☰
               </span>
             </button>
@@ -228,48 +228,48 @@ const Navbar = ({
       <motion.div
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
-        } z-50`}
+        } z-50 font-inter`} 
         initial={{ x: "100%" }}
         animate={{ x: isMenuOpen ? 0 : "100%" }}
       >
         <button
           onClick={toggleMenu}
-          className="absolute top-4 right-4 text-3xl text-orange-600"
+          className="absolute top-4 right-4 text-xl text-orange-600 font-inter" 
         >
           ✖
         </button>
         <div className="mt-12 p-4">
           {navLinks.map((link, index) => (
             <div key={index} className="mb-4">
-           {link.subMenu ? (
-  <div>
-    <span className="block text-gray-800 font-medium py-2">
-      {link.name}
-    </span>
-    <div className="ml-4">
-      {link.subMenu.map((subItem, i) => (
-        <a
-          key={i}
-          href={subItem.to} // Keep <a> for external links like Trackopia
-          className="block text-gray-600 hover:text-orange-600 py-2 text-sm"
-        >
-          {subItem.name}
-        </a>
-      ))}
-    </div>
-  </div>
-) : (
-  <Link
-    to={link.to} // Use Link for internal routes
-    className="block text-gray-800 hover:text-orange-600 py-2 font-medium"
-  >
-    {link.name}
-  </Link>
-)}
+              {link.subMenu ? (
+                <div>
+                  <span className="block text-gray-800 font-medium py-2 font-inter"> 
+                    {link.name}
+                  </span>
+                  <div className="ml-4">
+                    {link.subMenu.map((subItem, i) => (
+                      <a
+                        key={i}
+                        href={subItem.to}
+                        className="block text-gray-600 hover:text-orange-600 py-2 text-sm font-inter" 
+                      >
+                        {subItem.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  to={link.to}
+                  className="block text-gray-800 hover:text-orange-600 py-2 font-medium font-inter" 
+                >
+                  {link.name}
+                </Link>
+              )}
             </div>
           ))}
           <button
-            className="bg-orange-600 text-white px-4 py-2 rounded-full w-full mt-4 hover:bg-orange-700 transition-colors duration-300"
+            className="bg-orange-600 text-white px-4 py-2 rounded-full w-full mt-4 hover:bg-orange-700 transition-colors duration-300 font-inter" // Added font-inter
             onClick={() => navigate("/contact")}
           >
             {contactText}
@@ -277,7 +277,7 @@ const Navbar = ({
         </div>
       </motion.div>
     </motion.nav>
-  );
+);
 };
 
 export default Navbar;

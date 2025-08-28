@@ -5,10 +5,10 @@ import Growth from '../assets/growth.png'
 const GrowthSection = () => {
   return (
     <section className="bg-gray-50 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-20">
-      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+      <div className=" flex grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
         
         {/* Left Side - Illustration */}
-        <div className="flex justify-center">
+        <div className="flex-1/3 justify-center">
           <img
             src={Growth}
             alt="Marketing Tech Solutions"
@@ -17,7 +17,7 @@ const GrowthSection = () => {
         </div>
 
         {/* Right Side - Content */}
-        <div className="mt-6 lg:mt-0">
+        <div className="mt-6 lg:mt-0 flex-2/3">
           <h2 className="text-4xl font-bold text-gray-900 leading-snug mb-4 sm:mb-6">
             Why <span className="text-orange-500">Choose</span> Us?
           </h2>
