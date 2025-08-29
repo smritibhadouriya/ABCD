@@ -68,35 +68,34 @@ const Footer = () => {
     <footer className="bg-gradient-to-r from-gray-50 to-gray-100 py-8 px-4 md:px-8 lg:px-12 text-gray-700 border-t border-slate-200">
       <div className="px-10 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
         {/* Logo and Socials */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left md:mt-3">
-          <div className="flex items-center justify-center md:justify-start mb-4">
-            <img
-              src={Logo}
-              alt="Marcadeo Logo"
-              className="h-15 mr-4 transition-transform hover:scale-105"
-            />
-            <div className="flex flex-col items-start">
-             
-              <p className="text-sm leading-relaxed mb-3">
-                {footerData.company.description}
-              </p>
-            </div>
-          </div>
-          <div className="flex space-x-3">
-            {footerData.company.socials.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`text-gray-500 ${social.color} transition-colors`}
-                aria-label={`Visit our ${social.name} page`}
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-        </div>
+   <div className="flex flex-col items-start text-left md:mt-3">
+  <div className="flex items-center justify-start mb-4">
+    <img
+      src={Logo}
+      alt="Marcadeo Logo"
+      className="h-15 mr-4 transition-transform hover:scale-105"
+    />
+    <div className="flex flex-col items-start">
+      <p className="text-sm leading-relaxed mb-3">
+        {footerData.company.description}
+      </p>
+    </div>
+  </div>
+  <div className="flex space-x-3">
+    {footerData.company.socials.map((social) => (
+      <a
+        key={social.name}
+        href={social.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`text-gray-500 ${social.color} transition-colors`}
+        aria-label={`Visit our ${social.name} page`}
+      >
+        {social.icon}
+      </a>
+    ))}
+  </div>
+</div>
 
         {/* About Us and Support Sections */}
         {footerData.sections
