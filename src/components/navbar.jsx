@@ -110,6 +110,7 @@ const Navbar = ({
                 ) : (
                   <Link
                     to={link.to}
+                    
                     className={`${
                       isScrolledUp
                         ? "text-orange-600 font-bold text-lg hover:text-orange-600"
@@ -261,6 +262,7 @@ const Navbar = ({
               ) : (
                 <Link
                   to={link.to}
+                   onClick={toggleMenu}
                   className="block text-gray-800 hover:text-orange-600 py-2 font-medium font-inter" 
                 >
                   {link.name}
